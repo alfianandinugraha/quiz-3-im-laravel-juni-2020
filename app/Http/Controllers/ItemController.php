@@ -32,4 +32,10 @@ class ItemController extends Controller
 
         return redirect('/artikel/create');
     }
+
+    public function show($id)
+    {
+        $result = ArtikelModel::get_once($id);
+        return view('artikelItem', ['artikel' => $result[0]]);
+    }
 }
