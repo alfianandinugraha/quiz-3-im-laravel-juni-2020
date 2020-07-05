@@ -14,7 +14,7 @@ class ArtikelModel extends Model
         return $artikel;
     }
 
-    public static function create($data)
+    public static function create_article($data)
     {
         DB::table('artikel')->insert($data);
     }
@@ -25,12 +25,12 @@ class ArtikelModel extends Model
         return $artikel;
     }
 
-    public static function delete($id)
+    public static function delete_article($id)
     {
         DB::table('artikel')->where('id_artikel', '=', $id)->delete();
     }
 
-    public static function edit($id, $data)
+    public static function edit_article($id, $data)
     {
         DB::table('artikel')->where('id_artikel', '=', $id)->update($data);
     }
