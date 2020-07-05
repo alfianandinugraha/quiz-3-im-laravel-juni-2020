@@ -14,8 +14,11 @@ class CreateArtikelTable extends Migration
     public function up()
     {
         Schema::create('artikel', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->bigIncrements('id_artikel');
+            $table->string('judul', 200);
+            $table->string('isi', 512);
+            $table->string('slug', 512);
+            $table->string('tag', 200);
         });
     }
 
