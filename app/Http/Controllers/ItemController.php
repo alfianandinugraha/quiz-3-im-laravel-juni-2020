@@ -44,4 +44,23 @@ class ItemController extends Controller
         ArtikelModel::delete_article($id);
         return redirect('/artikel');
     }
+
+    public function edit($id)
+    {
+        $result = ArtikelModel::get_once($id);
+        return view('edit', ['artikel' => $result[0]]);
+    }
+
+    public function update($id)
+    {
+        $judul = request()->input('input-judul');
+        $isi = request()->input('input-isi');
+        $tags = request()->input('input-tags');
+        $slug = strtolower($judul);
+        $slug = trim($slug, " ");
+        $slug = str_replace(" ", "-", $slug);
+
+        ArtikelModel::edit_article($id, ['judul' => $judul, 'isi' => $isi, 'tag' => $tags, 'slug' => $slug]);
+        return redirect('/artikel/' . $id);
+    }
 }
