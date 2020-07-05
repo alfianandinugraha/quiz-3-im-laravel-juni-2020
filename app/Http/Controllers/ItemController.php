@@ -38,4 +38,10 @@ class ItemController extends Controller
         $result = ArtikelModel::get_once($id);
         return view('artikelItem', ['artikel' => $result[0]]);
     }
+
+    public function destroy($id)
+    {
+        ArtikelModel::delete_article($id);
+        return redirect('/artikel');
+    }
 }
