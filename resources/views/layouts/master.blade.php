@@ -230,15 +230,7 @@
     <!-- Page level custom scripts -->
     <script src="sbadmin2/js/demo/chart-area-demo.js"></script>
     <script src="sbadmin2/js/demo/chart-pie-demo.js"></script>
-    <script src="sbadmin2/js/swal.min.js"></script>
-    <script>
-        Swal.fire({
-            title: 'Berhasil!',
-            text: 'Memasangkan script sweet alert',
-            icon: 'success',
-            confirmButtonText: 'Cool'
-        })
-    </script>
+    @yield('script')
 </body>
 
 </html>

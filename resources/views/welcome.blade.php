@@ -6,6 +6,14 @@
 <img src="/images/erd.png" alt="">
 @endsection
 
-@push('stack')
-<h1>Hello</h1>
-@endpush
+@section('script')
+<script src="sbadmin2/js/swal.min.js"></script>
+<script>
+    Swal.fire({
+        title: 'Berhasil!',
+        text: 'Memasangkan script sweet alert',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+    })
+</script>
+@endsection
