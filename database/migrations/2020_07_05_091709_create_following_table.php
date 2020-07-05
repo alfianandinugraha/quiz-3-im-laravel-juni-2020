@@ -14,8 +14,11 @@ class CreateFollowingTable extends Migration
     public function up()
     {
         Schema::create('following', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->unsignedBigInteger('id_user');
+            $table->unsignedBigInteger('id_user_following');
+            $table->foreign('id_user')->constrained()->references('id_user')->on('users');
+            $table->foreign('id_user_following')->constrained()->references('id_user')->on('users');
+            $table->dateTime('tanggal_follow');
         });
     }
 
