@@ -11,7 +11,7 @@
                 <h3>
                     <a href="/artikel/<?= $artikel->id_artikel ?>">judul: <?= $artikel->judul ?></a>
                     <a href="/artikel/<?= $artikel->id_artikel ?>/edit" class="btn btn-primary">Edit</a>
-                    <form action="/artikel/<?= $artikel->id_artikel ?>/delete" method="POST" class="d-inline">
+                    <form action="/artikel/<?= $artikel->id_artikel ?>" method="POST" class="d-inline">
                         @csrf
                         <input type="hidden" name="_method" value="delete">
                         <button class="btn btn-danger">Hapus</button>
