@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
+    public function index()
+    {
+        $result = ArtikelModel::get_all();
+        return view('index', ['result' => $result]);
+    }
+
     public function create()
     {
         return view('create');
